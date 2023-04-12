@@ -24,7 +24,16 @@
 
 
     <section class="cards">
-      <article class="card_front"></article>
+      <article class="card_front">
+
+        <p id="prev_cardholder">e.g. Jane Appleseed</p>
+        <p id="prev_cardnumber">e.g. 1234 5678 9123 0000"</p>
+        <p id="prev_datemonth">mm</p>
+        <p id="prev_dateyear">yy</p>
+        <p id="prev_cardcvc">123</p>
+
+
+      </article>
       <article class="card_back"></article>
     </section>
 
@@ -38,13 +47,15 @@
         <label for="card_holder">
           <p>Cardholder Name</p>
         </label>
-        <input type="text" name="card-holder" id="card_holder" placeholder="e.g. Jane Appleseed">
+        <input type="text" name="card-holder" id="card_holder" placeholder="e.g. Jane Appleseed" pattern="[a-z]+">
+        <span class="wrong">Wrong format, letters only</span>
 
 
         <label for="card_number">
           <p>Card Number</p>
         </label>
-        <input type="text" name="card-number" id="card_number" placeholder="e.g. 1234 5678 9123 0000">
+        <input type="text" name="card-number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" pattern="[0-9]+">
+        <span class="wrong">Wrong format, numbers only</span>
 
         <div class="wrapper_wrapper">
           <div class="date_wrapper">
@@ -56,16 +67,19 @@
               </label>
             </label>
             <div class="year_month_text">
-              <input type="text" name="date-month" id="month" placeholder="MM">
-              <input type="text" name="date-year" id="year" placeholder="YY">
+              <input type="text" name="date-month" id="month" placeholder="MM" required pattern="\S+" />
+              <input type="text" name="date-year" id="year" placeholder="YY" required pattern="\S+" />
+              <span class="wrong">Can´t be blank</span>
             </div>
+
           </div>
           <div class="cvc_wrapper">
 
             <label for="card_cvc">
               <p>CVC</p>
             </label>
-            <input type="text" name="card-cvc" id="card_cvc" placeholder="e.g. 123">
+            <input type="text" name="card-cvc" id="card_cvc" placeholder="e.g. 123" required pattern="\S+" />
+            <span class="wrong">Can´t be blank</span>
           </div>
         </div>
         <button type="submit" id="confirm_button">Confirm</button>
@@ -79,38 +93,3 @@
 
 
   </main>
-
-
-
-
-
-
-
-
-
-
-
-  <!-- 0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000 -->
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-</body>
-
-</html>
