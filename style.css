@@ -1,0 +1,182 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  /* primary*/
+  /*(active input border)*/
+  /* --active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); */
+  --active-input-border: hsl(278, 94%, 30%);
+  /*(inputerrors)*/
+  --red-error: hsl(0, 100%, 66%);
+  /*Neutral*/
+  --White-main: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  /*====================================================*/
+  /*==================Fonts========================*/
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  --basic-font-color: rgba(0, 0, 0);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.gradient_bkg_wrapper {
+  background-image: url(images/bg-main-desktop.png);
+  background-size: cover;
+
+  min-width: 30vw;
+  height: 100vh;
+  flex-grow: 1;
+}
+.form_field_wrapper {
+  flex-grow: 3;
+  width: 70vw;
+  background: var(--White-main);
+  box-shadow: inset 40px 0px 50px rgba(53, 53, 53, 0.2);
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+#confirm_form {
+  width: 30vw;
+  display: block;
+}
+/*======================================================*/
+/*===============================================*/
+form:has(p) {
+  color: var(--basic-font-color);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+/*============input=text=====================*/
+form input[type="text"] {
+  all: unset;
+  border: 1px solid var(--Light-grayish-violet);
+  /* width: 30vw; */
+  width: clamp(10%, 80vw, 96.5%);
+  height: 45px;
+  border-radius: 7px;
+  text-align: start;
+  padding: 0 0 0 1rem;
+  font-size: 1rem;
+  margin: 0.3rem 0 1.3rem 0;
+}
+
+/*=================================================*/
+/*=================input main============================*/
+input[type="text"]::placeholder {
+  color: var(--Light-grayish-violet);
+  font-weight: 500;
+}
+
+input[type="text"]:focus {
+  border: 1px solid var(--active-input-border);
+  color: var(--active-input-border);
+  font-weight: 500;
+}
+
+/*===============================================*/
+/*===============================================*/
+.date_wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  width: 40%;
+}
+.wrapper_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 3rem;
+}
+.date_wrapper input[type="text"] {
+  width: 30%;
+}
+#year_month {
+  display: inline-flex;
+}
+#year {
+  margin: 0 0 0 0.5rem;
+}
+
+#card_cvc {
+  width: clamp(5%, 80vw, 94.1%);
+}
+.cvc_wrapper {
+  margin: 0 0 0 0;
+  width: 60%;
+}
+
+/*===============================================*/
+/*============button======================*/
+#confirm_button {
+  all: unset;
+  width: clamp(10%, 80vw, 100.3%);
+  height: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--White-main);
+  background: var(--Very-dark-violet);
+  border-radius: 0.5rem;
+}
+
+#confirm_button:hover {
+  background: var(--active-input-border);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/*===============================================*/
+
+.cards {
+  position: absolute;
+  top: 15%;
+
+  left: clamp(1%, 1100vw, 15%);
+  /* background: red; */
+  width: 447px;
+  height: 488px;
+}
+.card_front {
+  background-image: url(images/bg-card-front.png);
+  width: 447px;
+  height: 244px;
+  border-radius: 0.5rem;
+  translate: -50px 0;
+  box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
+}
+.card_back {
+  background-image: url(images/bg-card-back.png);
+  border-radius: 0.5rem;
+  width: 447px;
+  height: 244px;
+  margin-top: 2rem;
+  translate: 50px 0;
+  box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
+}
