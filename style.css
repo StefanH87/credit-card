@@ -10,13 +10,14 @@
   /*(active input border)*/
   /* --active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); */
   --active-input-border: hsl(278, 94%, 30%);
+
   /*(inputerrors)*/
   --red-error: hsl(0, 100%, 66%);
   /*Neutral*/
   --White-main: hsl(0, 0%, 100%);
   --Light-grayish-violet: hsl(270, 3%, 87%);
   --Dark-grayish-violet: hsl(279, 6%, 55%);
-  --Very-dark-violet: hsl(278, 68%, 11%);
+  --Very-dark-violet: hsl(277, 84%, 20%);
   /*====================================================*/
   /*==================Fonts========================*/
   font-size: 18px;
@@ -40,22 +41,28 @@ main {
   background-image: url(images/bg-main-desktop.png);
   background-size: cover;
 
-  min-width: 30vw;
+  min-width: 30%;
   height: 100vh;
   flex-grow: 1;
 }
 .form_field_wrapper {
   flex-grow: 3;
-  width: 70vw;
+  width: 70%;
   background: var(--White-main);
   box-shadow: inset 40px 0px 50px rgba(53, 53, 53, 0.2);
   height: 100vh;
-  display: grid;
-  place-content: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #confirm_form {
-  width: 30vw;
+  width: 60%;
+
   display: block;
+  position: relative;
+
+  overflow: hidden;
 }
 /*======================================================*/
 /*===============================================*/
@@ -66,6 +73,13 @@ form:has(p) {
   letter-spacing: 0.1rem;
   font-weight: 600;
 }
+
+:is(article) p {
+  color: var(--White-main);
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
 label:has(p) > p {
   margin: 1rem 0 0 0;
 }
@@ -98,19 +112,19 @@ input[type="text"]:focus {
   background: rgba(235, 235, 235, 0.3);
 }
 
-/*===============================================*/
+/*============================================================*/
 #card_holder:not(:placeholder-shown):invalid,
 #card_number:not(:placeholder-shown):invalid {
   color: var(--red-error);
 }
 
-#card_holder:invalid,
-#card_number:invalid {
+#card_holder:focus:invalid,
+#card_number:focus:invalid {
   border-color: var(--red-error);
 }
 
-#card_holder:invalid ~ .wrong,
-#card_number:invalid ~ .wrong {
+#card_holder:focus:invalid + .wrong,
+#card_number:focus:invalid + .wrong {
   opacity: 1;
 }
 
@@ -120,15 +134,20 @@ input[type="text"]:focus {
   opacity: 0;
 }
 
-#year:invalid,
-#month:invalid,
-#card_cvc:invalid {
+#year:focus:invalid,
+#month:focus:invalid,
+#card_cvc:focus:invalid {
   border-color: var(--red-error);
 }
-#year:invalid ~ .wrong,
-#month:invalid ~ .wrong,
-#card_cvc:invalid ~ .wrong {
+#year:focus:invalid ~ .wrong,
+#month:focus:invalid ~ .wrong,
+#card_cvc:focus:invalid ~ .wrong {
   opacity: 1;
+}
+
+input[type="text"]:valid {
+  border: 1px solid var(--active-input-border);
+  opacity: 0.6;
 }
 
 /*===============================================*/
@@ -146,13 +165,13 @@ input[type="text"]:focus {
   margin-bottom: 3rem;
 }
 .date_wrapper input[type="text"] {
-  width: 30%;
+  width: 35%;
 }
 #year_month {
   display: inline-flex;
 }
 #year {
-  margin: 0 0 0 0.5rem;
+  margin: 0.5rem 0 0 0.5rem;
 }
 
 #card_cvc {
@@ -192,103 +211,266 @@ input[type="text"]:focus {
   color: hsl(228, 45%, 44%);
 }
 /*===============================================*/
-
+/*========================================================*/
 .cards {
   position: absolute;
   top: 15%;
-
+  z-index: 4;
   left: clamp(1%, 1100vw, 12%);
   /* background: red; */
   width: 447px;
   height: 488px;
 }
-.card_front {
-  background-image: url(images/bg-card-front.png);
+.card_front,
+.card_back {
+  border-radius: 0.5rem;
   width: 447px;
   height: 244px;
-  border-radius: 0.5rem;
-  translate: -50px 0;
   box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
-  background: red;
 }
+
+.card_front {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 1.5rem 1rem 1.5rem;
+
+  background-image: url(images/bg-card-front.png);
+  background-position: center;
+  background-size: cover;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 68, 250, 255) 20%,
+    rgba(226, 73, 127, 1) 50%,
+    #e3746d 50%,
+    rgba(235, 72, 120, 1) 70%,
+    rgba(109, 15, 148, 1) 90%
+  );
+  /* translate: -50px 0; */
+  translate: calc(5px - 2vw) -265px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid var(--Very-dark-violet);
+  border-bottom: 1px solid var(--Very-dark-violet);
+}
+
 .card_back {
   background-image: url(images/bg-card-back.png);
-  border-radius: 0.5rem;
-  width: 447px;
-  height: 244px;
+  background-position: center;
+  background-size: cover;
   margin-top: 2rem;
-  translate: 50px 0;
-  box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
+  /* translate: 50px 0; */
+  translate: calc(5px + 2vw) 265px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid darkgray;
+  border-bottom: 1px solid darkgrey;
 }
 
-@media only screen and (max-width: 398px) {
-  body {
-    width: 100%;
+/*================================================*/
+.prev_carddata {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 30px;
+  font-size: 0.7rem;
+  padding-top: 1rem;
+  letter-spacing: 0.1rem;
+}
+#prev_datemonth {
+  margin-right: 0.2rem;
+}
+#prev_dateyear {
+  margin-left: 0.2rem;
+}
+#prev_cardnumber {
+  font-size: 1.6rem;
+  letter-spacing: 0.15rem;
+}
 
-    height: 100vh;
+.data_box {
+  translate: 145px 0;
+  display: flex;
+  align-items: center;
+
+  width: 90px;
+}
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 120px;
+  height: 50px;
+
+  translate: 0 -100px;
+}
+.big_circle,
+.small_circle {
+  border-radius: 50%;
+  display: block;
+}
+
+.big_circle {
+  width: 35px;
+  height: 35px;
+  background: var(--White-main);
+}
+.small_circle {
+  border: 1px solid var(--White-main);
+  width: 20px;
+  height: 20px;
+}
+/*=================================*/
+
+/*================================================================*/
+/*=========================Fin Screen================================*/
+.fin_screen {
+  background: white;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: 0 -350px;
+  display: block;
+  transition: 0.5s ease-in-out;
+}
+.icon {
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+}
+
+.fin_header,
+.fin_text {
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+}
+.fin_header {
+  color: var(--basic-font-color);
+  text-transform: uppercase;
+  margin-bottom: 1.3rem;
+}
+
+.fin_text {
+  color: var(--Dark-grayish-violet);
+  font-size: 0.9rem;
+}
+
+#confirm_button:active > .fin_screen {
+  translate: 0 0px;
+}
+
+/*=========================*/
+#prev_cardcvc {
+  translate: 350px 109px;
+}
+
+/*=====================================================*/
+
+@media only screen and (max-width: 398px) {
+  :root {
+    height: 100%;
+  }
+  body {
+    width: 100vw;
+
+    height: 100%;
   }
   main {
-    display: grid;
-    grid-template-columns: 1fr;
-    /* background:red; */
+    display: block;
+
     width: 100vw;
+    height: 100%;
   }
-  form:has(p) {
-    font-size: 0.7rem;
-  }
+  form:has(p),
   input[type="text"]::placeholder {
     font-size: 0.7rem;
   }
 
   .gradient_bkg_wrapper {
     width: 100vw;
-    height: 40vh;
+    height: 28vh;
     /* background:red; */
   }
   .form_field_wrapper {
     width: 100vw;
     box-shadow: inset -10px 10px 20px rgba(53, 53, 53, 0.2);
     display: grid;
-    place-content: center;
-    height: 80vh;
+
+    /* place-content: center; */
+    height: 80%;
+
+    padding: 0 0 0 1.6rem;
+  }
+  .date_wrapper {
+    margin: 1rem 0 0 0;
+  }
+  #year {
+    margin: 0rem 0 0 0.5rem;
   }
   #confirm_form {
     width: 100vw;
     display: block;
     margin: 0 0 0 2.8rem;
+    padding-top: 1rem;
   }
   .cards {
     position: absolute;
     top: 0%;
 
     left: 0;
-    /* background:blue; */
+
     width: 447px;
-    height: 488px;
+    height: 270px;
   }
+
+  /*=========================================*/
+  /*================Card Front======================*/
   .card_front {
     background-image: url(images/bg-card-front.png);
-    width: 267px;
-    height: 160px;
+    background-position: center;
+    background-size: cover;
+    width: 280px;
+    height: 150px;
+    /* translate: 70px 50px; */
+    translate: 30px -70px;
 
-    translate: 70px 50px;
+    padding: 0 0.7rem 0.5rem 0.7rem;
   }
+  #prev_cardnumber {
+    font-size: 0.9rem;
+    letter-spacing: 0.15rem;
+  }
+  .prev_carddata {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    font-size: 0.5rem;
+    padding-top: 0.6rem;
+    letter-spacing: 0.1rem;
+  }
+  /*================Card Back======================*/
   .card_back {
     background-image: url(images/bg-card-back.png);
+    background-size: cover;
+    background-position: center;
 
     width: 267px;
     height: 160px;
     margin-top: 2rem;
-    translate: 30px -60px;
+    /* translate: 30px -60px; */
+    translate: 70px 0px;
   }
+  .data_box {
+    translate: 70px 0;
+  }
+
   form input[type="text"] {
-    all: unset;
-    border: 1px solid var(--Light-grayish-violet);
-    /* width: 30vw; */
     width: 70vw;
-    height: 45px;
-    border-radius: 7px;
-    text-align: start;
+
     padding: 0 0 0 1rem;
     font-size: 1rem;
     margin: 0.3rem 0 1.3rem 0;
@@ -299,7 +481,66 @@ input[type="text"]:focus {
   #card_cvc {
     width: 30vw;
   }
-  .wrapper_wrapper {
-    margin-bottom: 1rem;
+
+  #prev_cardcvc {
+    translate: 225px 72px;
+    font-size: 0.7rem;
+  }
+  .circle {
+    gap: 0.6rem;
+    width: 120px;
+    height: 50px;
+
+    translate: 0 -35px;
+  }
+  .big_circle {
+    width: 25px;
+    height: 25px;
+    background: var(--White-main);
+  }
+  .small_circle {
+    border: 1px solid var(--White-main);
+    width: 10px;
+    height: 10px;
+  }
+  #confirm_button {
+    width: 75%;
+  }
+  .form_field_wrapper p {
+    margin: -1rem 0 0rem 0;
+  }
+  .fin_screen {
+    width: 75%;
+  }
+  .icon {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .fin_header,
+  .fin_text {
+    letter-spacing: 0.15rem;
+    font-weight: 600;
+  }
+  .fin_header {
+    color: var(--basic-font-color);
+    text-transform: uppercase;
+    margin: 0 0 2rem 0;
+    font-size: 1.6rem;
+  }
+
+  .fin_text {
+    color: var(--Dark-grayish-violet);
+    font-size: 0.7rem;
+    padding: 2rem 0 0 0;
+  }
+  .wrong {
+    display: block;
+    font-size: 0.5rem;
+    letter-spacing: 0;
+    margin: -1rem 0 1.3rem 0;
+  }
+  .cvc_wrapper {
+    margin: 1rem 0 0 0;
   }
 }

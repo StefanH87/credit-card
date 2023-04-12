@@ -36,29 +36,25 @@ cardholder.addEventListener("input", (e) => {
 //------------Nummer----------------------------//
 const cardnumber = document.getElementById("card_number");
 cardnumber.addEventListener("input", (e) => {
-  previewCardField(
-    e.target.value,
-    "e.g. 1234 5678 9123 0000",
-    "prev_cardnumber"
-  );
+  previewCardField(e.target.value, "0000 0000 0000 0000", "prev_cardnumber");
 });
 
 //------------Monat----------------------------//
 const dateMonth = document.getElementById("month");
 dateMonth.addEventListener("input", (e) => {
-  previewCardField(e.target.value, "MM", "prev_datemonth");
+  previewCardField(e.target.value, "00", "prev_datemonth");
 });
 
 //------------jahr----------------------------//
 const dateYear = document.getElementById("year");
 dateYear.addEventListener("input", (e) => {
-  previewCardField(e.target.value, "YY", "prev_dateyear");
+  previewCardField(e.target.value, "00", "prev_dateyear");
 });
 
 //------------CVC----------------------------//
 const cardCvc = document.getElementById("card_cvc");
 cardCvc.addEventListener("input", (e) => {
-  previewCardField(e.target.value, "1234", "prev_cardcvc");
+  previewCardField(e.target.value, "000", "prev_cardcvc");
 });
 
 function previewCardField(inputValue, defaultValue, previewSelector) {
