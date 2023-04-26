@@ -1,0 +1,126 @@
+:root {
+  --dark-grey: linear-gradient(to right, #343a40 30%, #000814);
+  --light-grey: linear-gradient(to right, #ced4da 20%, #adb5bd);
+  --card-small-stripes: #adb5bd;
+  --card-background-color: linear-gradient(90deg, #f8f9fa 20%, #e9ecef);
+
+  --clr-card-bkg: var(--card-background-color);
+  --clr-strip-light: var(--light-grey);
+  --clr-strip-dark: var(--dark-grey);
+}
+
+/*==================Frontside=======================*/
+.circle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 120px;
+  height: 50px;
+  margin-left: 0.2rem;
+}
+.big_circle,
+.small_circle {
+  border-radius: 50%;
+}
+
+.big_circle {
+  width: 30px;
+  height: 30px;
+  background: var(--White-main);
+}
+.small_circle {
+  border: 1px solid var(--White-main);
+  width: 15px;
+  height: 15px;
+}
+.data_box {
+  display: flex;
+  align-items: center;
+}
+.prev_carddata {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+
+  margin-inline: auto;
+  padding-top: 1rem;
+  letter-spacing: 0.1rem;
+}
+#prev_datemonth {
+  margin-right: 0.2rem;
+}
+#prev_dateyear {
+  margin-left: 0.2rem;
+}
+#prev_cardnumber {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.15rem;
+  margin-top: 2rem;
+}
+/*==================Backside=======================*/
+
+.dark-stripe {
+  background: var(--clr-strip-dark);
+  width: 100%;
+  height: 20%;
+}
+.middle-stripe {
+  background: var(--clr-strip-light);
+  height: 20%;
+  width: 85%;
+  border-radius: 0.2rem;
+  margin: 0.8rem 0 1rem 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: end;
+}
+.line {
+  height: 2%;
+  width: 40%;
+  background: var(--clr-strip-light);
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+.line-one {
+  background: linear-gradient(
+    to right,
+    var(--card-small-stripes) 56%,
+    transparent 56% 60%,
+    var(--card-small-stripes) 60% 73%,
+    transparent 73% 77%,
+    var(--card-small-stripes) 77% 85%,
+    var(--card-small-stripes) 85% 90%,
+    transparent 90% 94%,
+    var(--card-small-stripes) 94% 100%
+  );
+}
+
+.line-two {
+  background: linear-gradient(
+    to right,
+    transparent 0% 8%,
+    var(--card-small-stripes) 8% 20%,
+    transparent 20% 25%,
+    var(--card-small-stripes) 25% 50%,
+    transparent 50% 55%,
+    var(--card-small-stripes) 55% 80%,
+    transparent 80% 85%,
+    var(--card-small-stripes) 85% 90%,
+    transparent 90%
+  );
+}
+.line-three {
+  background: linear-gradient(
+    to right,
+    var(--card-small-stripes) 0% 5%,
+    transparent 5% 10%,
+    var(--card-small-stripes) 10% 20%,
+    transparent 20% 25%,
+    var(--card-small-stripes) 25% 40%,
+    transparent 40% 45%,
+    var(--card-small-stripes) 45%
+  );
+}

@@ -1,3 +1,5 @@
+@import url(cardBack.css);
+
 *,
 *::after,
 *::before {
@@ -23,28 +25,10 @@
   font-size: 18px;
   font-family: "Space Grotesk", sans-serif;
   --basic-font-color: rgba(0, 0, 0);
+  --input-font: rgba(0, 0, 0, 0.6);
 }
 
-body {
-  width: 397px;
-  height: auto;
-}
-main {
-  display: flex;
-
-  flex-wrap: wrap;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-}
-.gradient_bkg_wrapper {
-  background-image: url(images/bg-main-desktop.png);
-  background-size: cover;
-
-  min-width: 30%;
-  height: 100vh;
-  flex-grow: 1;
-}
+/*
 .form_field_wrapper {
   flex-grow: 3;
   width: 70%;
@@ -56,64 +40,17 @@ main {
   align-items: center;
   justify-content: center;
 }
-#confirm_form {
-  width: 50%;
 
-  display: block;
-  position: relative;
-
-  overflow: hidden;
-}
 /*======================================================*/
 /*===============================================*/
-form:has(p) {
-  color: var(--basic-font-color);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
-}
-
-:is(article) p {
-  color: var(--White-main);
-  text-transform: uppercase;
-  font-weight: 200;
-}
-
-label:has(p) > p {
-  margin: 1rem 0 0 0;
-}
 
 /*============input=text=====================*/
-form input[type="text"] {
-  all: unset;
-  border: 1px solid var(--Light-grayish-violet);
-  /* width: 30vw; */
-  width: clamp(10%, 80vw, 96.5%);
-  height: 45px;
-  border-radius: 7px;
-  text-align: start;
-  padding: 0 0 0 1rem;
-  font-size: 1rem;
-  margin: 0.3rem 0 0.2rem 0;
-}
 
 /*=================================================*/
 /*=================input main============================*/
-input[type="text"]::placeholder {
-  color: var(--Light-grayish-violet);
-  font-weight: 500;
-}
-
-input[type="text"]:focus {
-  border: 1px solid var(--active-input-border);
-  color: var(--active-input-border);
-  font-weight: 500;
-  background: rgba(235, 235, 235, 0.3);
-}
 
 /*============================================================*/
-#card_holder:not(:placeholder-shown):invalid,
+/* #card_holder:not(:placeholder-shown):invalid,
 #card_number:not(:placeholder-shown):invalid {
   color: var(--red-error);
 }
@@ -148,10 +85,10 @@ input[type="text"]:focus {
 input[type="text"]:valid {
   border: 1px solid var(--active-input-border);
   opacity: 0.6;
-}
+} */
 
 /*===============================================*/
-.date_wrapper {
+/* .date_wrapper {
   display: grid;
   grid-template-columns: 1fr;
 
@@ -182,24 +119,12 @@ input[type="text"]:valid {
   width: 60%;
   display: grid;
   grid-template-columns: 1fr;
-}
+} */
 
 /*===============================================*/
 /*============button======================*/
-#confirm_button {
-  all: unset;
-  width: clamp(10%, 80vw, 100.3%);
-  height: 3rem;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 400;
-  text-transform: none;
-  color: var(--White-main);
-  background: var(--Very-dark-violet);
-  border-radius: 0.5rem;
-}
 
-#confirm_button:hover {
+/* #confirm_button:hover {
   background: var(--active-input-border);
 }
 
@@ -209,123 +134,15 @@ input[type="text"]:valid {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
+} */
 /*===============================================*/
 /*========================================================*/
-.cards {
-  position: absolute;
-  top: 15%;
-  z-index: 4;
-  left: clamp(1%, 110vw, 12%);
-  /* background: red; */
-  width: 447px;
-  height: 488px;
-}
-.card_front,
-.card_back {
-  border-radius: 0.5rem;
-  width: 100%;
-  height: 50%;
-  box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
-}
-
-.card_front {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 1.5rem 1rem 1.5rem;
-
-  background-image: url(images/bg-card-front.png);
-  background-position: center;
-  background-size: cover;
-  background: linear-gradient(
-    135deg,
-    rgba(99, 68, 250, 255) 20%,
-    rgba(226, 73, 127, 1) 50%,
-    #e3746d 50%,
-    rgba(235, 72, 120, 1) 70%,
-    rgba(109, 15, 148, 1) 90%
-  );
-  /* translate: -50px 0; */
-  translate: calc(5px - 2vw) -265px;
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid var(--Very-dark-violet);
-  border-bottom: 1px solid var(--Very-dark-violet);
-}
-
-.card_back {
-  background-image: url(images/bg-card-back.png);
-  background-position: center;
-  background-size: cover;
-  margin-top: 2rem;
-  /* translate: 50px 0; */
-  translate: calc(5px + 2vw) 265px;
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid darkgray;
-  border-bottom: 1px solid darkgrey;
-}
 
 /*================================================*/
-.prev_carddata {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: 30px;
-  font-size: 0.7rem;
-  padding-top: 1rem;
-  letter-spacing: 0.1rem;
-}
-#prev_datemonth {
-  margin-right: 0.2rem;
-}
-#prev_dateyear {
-  margin-left: 0.2rem;
-}
-#prev_cardnumber {
-  font-size: 1.6rem;
-  letter-spacing: 0.15rem;
-}
-
-.data_box {
-  translate: 145px 0;
-  display: flex;
-  align-items: center;
-
-  width: 90px;
-}
-
-.circle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.8rem;
-  width: 120px;
-  height: 50px;
-
-  translate: 0 -100px;
-}
-.big_circle,
-.small_circle {
-  border-radius: 50%;
-  display: block;
-}
-
-.big_circle {
-  width: 35px;
-  height: 35px;
-  background: var(--White-main);
-}
-.small_circle {
-  border: 1px solid var(--White-main);
-  width: 20px;
-  height: 20px;
-}
-/*=================================*/
 
 /*================================================================*/
 /*=========================Fin Screen================================*/
-.fin_screen {
+/* .fin_screen {
   background: white;
   width: 100%;
   height: 80%;
@@ -362,185 +179,223 @@ input[type="text"]:valid {
 }
 
 /*=========================*/
-#prev_cardcvc {
+/* #prev_cardcvc {
   translate: 350px 109px;
-}
+}  */
 
 /*=====================================================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100%;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 100%;
+}
 
-@media only screen and (max-width: 398px) {
-  :root {
-    height: 100%;
-  }
-  body {
-    width: 100vw;
+.gradient_bkg_wrapper {
+  width: 100%;
+  height: 30vh;
+  background: green;
+  display: block;
+}
 
-    height: 100%;
-  }
+.content_wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: 70vh;
+}
+/*===============================================*/
+/*=================Cards==default=====================*/
+/*===============================================*/
+:is(article) p {
+  color: var(--White-main);
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 0.6rem;
+}
+.cards {
+  position: relative;
+  width: 90%;
+  height: 220px;
+  border: 1px solid red;
+  margin-block: -10rem 2rem;
+
+  margin-inline: auto;
+}
+.card_front,
+.card_back {
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 330px;
+  height: 75%;
+
+  box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
+}
+.card_front {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  margin-inline: auto;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 68, 250, 255) 20%,
+    rgba(226, 73, 127, 1) 50%,
+    #e3746d 50%,
+    rgba(235, 72, 120, 1) 70%,
+    rgba(109, 15, 148, 1) 90%
+  );
+
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid var(--Very-dark-violet);
+  border-bottom: 1px solid var(--Very-dark-violet);
+}
+
+.card_back {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--clr-card-bkg);
+
+  border-top: 1px solid var(--clr-white);
+  border-left: 1px solid var(--clr-white);
+}
+
+/*======================================================*/
+/*============== Form Field=============================*/
+/*======================================================*/
+.form_field_wrapper {
+  display: block;
+  width: 100%;
+}
+#confirm_form {
+  width: 90%;
+  margin-inline: auto;
+}
+
+form input[type="text"] {
+  all: unset;
+  border: 1px solid var(--Light-grayish-violet);
+  width: 100%;
+  height: 45px;
+  border-radius: 7px;
+  text-align: start;
+
+  font-size: 1rem;
+}
+/*===========================================*/
+/*=======input text field===========*/
+label:has(p) > p {
+  margin: 1rem 0 0 0;
+}
+input[type="text"]::placeholder {
+  color: var(--Light-grayish-violet);
+  font-weight: 500;
+  text-transform: none;
+  padding-left: 0.8rem;
+}
+
+input[type="text"]:focus {
+  border: 1px solid var(--active-input-border);
+  color: var(--active-input-border);
+  font-weight: 500;
+  background: rgba(235, 235, 235, 0.3);
+}
+form:has(p) {
+  color: var(--basic-font-color);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+
+.wrong {
+  display: none;
+}
+
+.year_month_text {
+  all: unset;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+}
+.year_month_text > span {
+  width: 100%;
+}
+#month,
+#year {
+  width: 40%;
+}
+#year {
+  margin-left: 0.5rem;
+}
+/*==========================================*/
+/*=============Confirm Button=======================*/
+/*==========================================*/
+
+#confirm_button {
+  all: unset;
+  width: 100%;
+  padding-block: 0.6rem;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: none;
+  color: var(--White-main);
+  background: var(--Very-dark-violet);
+  border-radius: 0.5rem;
+}
+
+#confirm_button:hover {
+  background: var(--active-input-border);
+}
+
+/* :is(article) p {
+  color: var(--White-main);
+  text-transform: uppercase;
+  font-weight: 200;
+} */
+@media only screen and (min-width: 1400px) {
   main {
-    display: block;
-
-    width: 100vw;
-    height: 100%;
-  }
-  form:has(p),
-  input[type="text"]::placeholder {
-    font-size: 0.7rem;
-  }
-
-  .gradient_bkg_wrapper {
-    width: 100vw;
-    height: 28vh;
-    /* background:red; */
-  }
-  .form_field_wrapper {
-    width: 100vw;
-    box-shadow: inset -10px 10px 20px rgba(53, 53, 53, 0.2);
-    display: grid;
-
-    /* place-content: center; */
-    height: 80%;
-
-    padding: 0 0 0 1.6rem;
-  }
-  .date_wrapper {
-    margin: 1rem 0 0 0;
-  }
-  #year {
-    margin: 0rem 0 0 0.5rem;
-  }
-  #confirm_form {
-    width: 100vw;
-    display: block;
-    margin: 0 0 0 2.8rem;
-    padding-top: 1rem;
-  }
-  .cards {
-    position: absolute;
-    top: 0%;
-
-    left: 0;
-
-    width: 447px;
-    height: 270px;
-  }
-
-  /*=========================================*/
-  /*================Card Front======================*/
-  .card_front {
-    background-image: url(images/bg-card-front.png);
-    background-position: center;
-    background-size: cover;
-    width: 280px;
-    height: 150px;
-    /* translate: 70px 50px; */
-    translate: 30px -70px;
-
-    padding: 0 0.7rem 0.5rem 0.7rem;
-  }
-  #prev_cardnumber {
-    font-size: 0.9rem;
-    letter-spacing: 0.15rem;
-  }
-  .prev_carddata {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
     width: 100%;
-    height: 30px;
-    font-size: 0.5rem;
-    padding-top: 0.6rem;
-    letter-spacing: 0.1rem;
+    height: 100%;
   }
-  /*================Card Back======================*/
-  .card_back {
-    background-image: url(images/bg-card-back.png);
-    background-size: cover;
-    background-position: center;
-
-    width: 267px;
-    height: 160px;
-    margin-top: 2rem;
-    /* translate: 30px -60px; */
-    translate: 70px 0px;
-  }
-  .data_box {
-    translate: 70px 0;
-  }
-
-  form input[type="text"] {
-    width: 70vw;
-
-    padding: 0 0 0 1rem;
-    font-size: 1rem;
-    margin: 0.3rem 0 1.3rem 0;
-  }
-  .date_wrapper input[type="text"] {
-    width: 30%;
-  }
-  #card_cvc {
+  .gradient_bkg_wrapper {
     width: 30vw;
-  }
+    height: 100%;
 
-  #prev_cardcvc {
-    translate: 225px 72px;
-    font-size: 0.7rem;
-  }
-  .circle {
-    gap: 0.6rem;
-    width: 120px;
-    height: 50px;
-
-    translate: 0 -35px;
-  }
-  .big_circle {
-    width: 25px;
-    height: 25px;
-    background: var(--White-main);
-  }
-  .small_circle {
-    border: 1px solid var(--White-main);
-    width: 10px;
-    height: 10px;
-  }
-  #confirm_button {
-    width: 75%;
-  }
-  .form_field_wrapper p {
-    margin: -1rem 0 0rem 0;
-  }
-  .fin_screen {
-    width: 75%;
-  }
-  .icon {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-
-  .fin_header,
-  .fin_text {
-    letter-spacing: 0.15rem;
-    font-weight: 600;
-  }
-  .fin_header {
-    color: var(--basic-font-color);
-    text-transform: uppercase;
-    margin: 0 0 2rem 0;
-    font-size: 1.6rem;
-  }
-
-  .fin_text {
-    color: var(--Dark-grayish-violet);
-    font-size: 0.7rem;
-    padding: 2rem 0 0 0;
-  }
-  .wrong {
     display: block;
-    font-size: 0.5rem;
-    letter-spacing: 0;
-    margin: -1rem 0 1.3rem 0;
   }
-  .cvc_wrapper {
-    margin: 1rem 0 0 0;
+  .content_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70vw;
+    height: 100%;
   }
 }

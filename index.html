@@ -22,108 +22,136 @@
 
     </section>
 
+    <section class="content_wrapper">
+      <section class="cards">
 
-    <section class="cards">
+        <article class="card_back">
+          <span class="dark-stripe"></span>
+          <span class="middle-stripe">
+            <p id="prev_cardcvc">000</p>
+          </span>
+          <span class="line line-one"></span>
+          <span class="line line-two"></span>
+          <span class="line line-three"></span>
 
-      <article class="card_back">
-        <p id="prev_cardcvc">000</p>
-      </article>
-      <article class="card_front">
-        <div class="circle">
-          <span class="big_circle"></span>
-          <span class="small_circle"></span>
-        </div>
-
-        <p id="prev_cardnumber">
-
-          <body>0000 0000 0000 0000
-        </p>
-        <div class="prev_carddata">
-          <p id="prev_cardholder">Jane Appleseed</p>
-          <div class="data_box">
-            <p id="prev_datemonth">00</p>
-            <p class="slash">/</p>
-            <p id="prev_dateyear">00</p>
+        </article>
+        <article class="card_front">
+          <div class="circle">
+            <span class="big_circle"></span>
+            <span class="small_circle"></span>
           </div>
-        </div>
 
+          <p id="prev_cardnumber">
 
-
-      </article>
-    </section>
-
-
-
-
-
-    <section class="form_field_wrapper">
-
-      <form action="" id="confirm_form">
-        <!-- <section class="fin_screen"></section> -->
-        <label for="card_holder">
-          <p>Cardholder Name</p>
-        </label>
-        <input type="text" name="card-holder" id="card_holder" maxlength="20" placeholder="e.g. Jane Appleseed" required
-          pattern="[a-z]+">
-        <span class="wrong">Wrong format, letters only</span>
-
-
-        <label for="card_number">
-          <p>Card Number</p>
-        </label>
-        <input type="text" name="card-number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" required
-          pattern="[0-9]+" maxlength="16">
-        <span class="wrong">Wrong format, numbers only</span>
-
-        <div class="wrapper_wrapper">
-          <div class="date_wrapper">
-            <label for="month" id="year_month">
-              <p>Exp. Date </p>
-
-              <label for="year" id="year_label">
-                <p> (MM/YY)</p>
-              </label>
-            </label>
-            <div class="year_month_text">
-              <input type="text" name="date-month" id="month" maxlength="2" placeholder="MM" required
-                pattern="[0-9]\S+" />
-              <input type="text" name="date-year" id="year" maxlength="2" max="" placeholder="YY" required
-                pattern="[0-9]\S+" />
-              <span class="wrong">Can´t be blank / Only numbers</span>
+            0000 0000 0000 0000
+          </p>
+          <div class="prev_carddata">
+            <p id="prev_cardholder">Jane Appleseed</p>
+            <div class="data_box">
+              <p id="prev_datemonth">00</p>
+              <p class="slash">/</p>
+              <p id="prev_dateyear">00</p>
             </div>
-
           </div>
-          <div class="cvc_wrapper">
 
-            <label for="card_cvc">
-              <p>CVC</p>
-            </label>
-            <input type="text" name="card-cvc" id="card_cvc" maxlength="3" placeholder="e.g. 123" required
-              pattern="[0-9]\S+" />
-            <span class="wrong">Can´t be blank / Only numbers</span>
-          </div>
-        </div>
 
-        <button type="submit" id="confirm_button">
-          <section class="fin_screen">
-            <div class="icon"><img src="images/icon-complete.svg" alt=""></div>
-            <p class="fin_header">Thank You!</p>
-            <p class="fin_text">We`ve added your card details</p>
+
+        </article>
+      </section>
 
 
 
 
-          </section>Confirm
-        </button>
-      </form>
+
+      <section class="form_field_wrapper">
+
+        <form action="" id="confirm_form">
+          <!-- <section class="fin_screen"></section> -->
+          <label for="card_holder">
+            <p>Cardholder Name</p>
+          </label>
+          <input type="text" name="card-holder" id="card_holder" maxlength="20" placeholder="e.g. Jane Appleseed"
+            required pattern="[a-z]+">
+          <span class="wrong">Wrong format, letters only</span>
+
+
+          <label for="card_number">
+            <p>Card Number</p>
+          </label>
+          <input type="text" name="card-number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" required
+            pattern="[0-9]+" maxlength="16">
+          <span class="wrong">Wrong format, numbers only</span>
+
+          <div class="wrapper_wrapper">
+            <div class="date_wrapper">
 
 
 
 
+              <fieldset class="year_month_text">
+                <span>
+                  <p>Exp. Date (
+                    <label for="month">MM</label>/<label for="year">YY</label>)
+                  </p>
+                  <input type="text" name="date-month" id="month" maxlength="2" placeholder="MM" required
+                    pattern="[0-9]\S+" />
+
+                  <input type="text" name="date-year" id="year" maxlength="2" max="" placeholder="YY" required
+                    pattern="[0-9]\S+" />
+                  <span class="wrong">Can´t be blank / Only numbers</span>
+
+                </span>
+                <span>
+                  <label for="card_cvc">
+                    <p>CVC</p>
+                  </label>
+                  <input type="text" name="card-cvc" id="card_cvc" maxlength="3" placeholder="e.g. 123" required
+                    pattern="[0-9]\S+" />
+                  <span class="wrong">Can´t be blank / Only numbers</span>
+                </span>
+              </fieldset>
+
+
+
+              <!-- <label for="year" id="year_label">
+                  <p> (MM/YY)</p>
+                </label>
+              </label> -->
+              <!-- <div class="year_month_text">
+                <input type="text" name="date-month" id="month" maxlength="2" placeholder="MM" required
+                  pattern="[0-9]\S+" />
+                <input type="text" name="date-year" id="year" maxlength="2" max="" placeholder="YY" required
+                  pattern="[0-9]\S+" />
+                <span class="wrong">Can´t be blank / Only numbers</span>
+              </div> -->
+
+              <!-- </div> -->
+              <!-- <div class="cvc_wrapper">
+
+                
+              </div> -->
+            </div>
+            <button type="submit" id="confirm_button">Confirm</button>
+            <!-- <button type="submit" id="confirm_button">
+            <section class="fin_screen">
+              <div class="icon"><img src="images/icon-complete.svg" alt=""></div>
+              <p class="fin_header">Thank You!</p>
+              <p class="fin_text">We`ve added your card details</p>
+
+
+
+
+            </section>Confirm
+          </button> -->
+        </form>
+
+
+
+
+
+      </section>
 
     </section>
-
-
   </main>
 
   <script src="script.js"></script>
