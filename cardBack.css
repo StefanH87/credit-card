@@ -1,15 +1,3 @@
-:root {
-  --dark-grey: linear-gradient(to right, #343a40 30%, #000814);
-  --light-grey: linear-gradient(to right, #ced4da 20%, #adb5bd);
-  --card-small-stripes: #adb5bd;
-  --card-background-color: linear-gradient(90deg, #f8f9fa 20%, #e9ecef);
-
-  --clr-card-bkg: var(--card-background-color);
-  --clr-strip-light: var(--light-grey);
-  --clr-strip-dark: var(--dark-grey);
-}
-
-/*==================Frontside=======================*/
 .circle {
   display: inline-flex;
   align-items: center;
@@ -60,6 +48,7 @@
   letter-spacing: 0.15rem;
   margin-top: 2rem;
 }
+
 /*==================Backside=======================*/
 
 .dark-stripe {
@@ -79,7 +68,7 @@
 }
 .line {
   height: 2%;
-  width: 40%;
+  width: 50%;
   background: var(--clr-strip-light);
   border-radius: 1rem;
   margin-bottom: 0.5rem;

@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
   <title>Frontend Mentor | Interactive card details form</title>
@@ -19,7 +28,7 @@
 
   <main>
     <section class="gradient_bkg_wrapper">
-
+      <span class="filter_box"></span>
     </section>
 
     <section class="content_wrapper">
@@ -94,14 +103,14 @@
                     <label for="month">MM</label>/<label for="year">YY</label>)
                   </p>
                   <input type="text" name="date-month" id="month" maxlength="2" placeholder="MM" required
-                    pattern="[0-9]\S+" />
+                    pattern="[1-9]\S+" />
 
                   <input type="text" name="date-year" id="year" maxlength="2" max="" placeholder="YY" required
                     pattern="[0-9]\S+" />
                   <span class="wrong">Can´t be blank / Only numbers</span>
 
                 </span>
-                <span>
+                <span class="cvc_span">
                   <label for="card_cvc">
                     <p>CVC</p>
                   </label>
@@ -113,36 +122,22 @@
 
 
 
-              <!-- <label for="year" id="year_label">
-                  <p> (MM/YY)</p>
-                </label>
-              </label> -->
-              <!-- <div class="year_month_text">
-                <input type="text" name="date-month" id="month" maxlength="2" placeholder="MM" required
-                  pattern="[0-9]\S+" />
-                <input type="text" name="date-year" id="year" maxlength="2" max="" placeholder="YY" required
-                  pattern="[0-9]\S+" />
-                <span class="wrong">Can´t be blank / Only numbers</span>
-              </div> -->
-
-              <!-- </div> -->
-              <!-- <div class="cvc_wrapper">
-
-                
-              </div> -->
-            </div>
-            <button type="submit" id="confirm_button">Confirm</button>
-            <!-- <button type="submit" id="confirm_button">
-            <section class="fin_screen">
-              <div class="icon"><img src="images/icon-complete.svg" alt=""></div>
-              <p class="fin_header">Thank You!</p>
-              <p class="fin_text">We`ve added your card details</p>
 
 
 
 
-            </section>Confirm
-          </button> -->
+
+
+              <button type="submit" id="confirm_button">Confirm</button>
+              <section class="fin_screen">
+                <div class="icon">
+                  <!-- <img src="images/icon-complete.svg" alt=""> -->
+                </div>
+                <p class="fin_header">Thank You!</p>
+                <p class="fin_text">We`ve added your card details</p>
+                <button type="submit" id="continue_button">Continue</button>
+              </section>
+              <!-- </button>  -->
         </form>
 
 
@@ -150,8 +145,11 @@
 
 
       </section>
-
+      <button data-theme="" class="theme-switch">default</button>
+      <button data-theme="theme-dark" class="theme-switch">dark</button>
+      <button data-theme="theme-cyber" class="theme-switch">cyber</button>
     </section>
+
   </main>
 
   <script src="script.js"></script>

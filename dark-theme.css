@@ -1,0 +1,80 @@
+:root {
+  --font: "Roboto Mono", monospace;
+  /*========Prime Colors==================*/
+
+  --active-input-border: #61a5c2;
+
+  /*(inputerrors)*/
+  --red-error: #c9485f;
+
+  /*Neutral*/
+  --White-main: #171717;
+  --Light-grayish-violet: #9a9a9a;
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: #014f86;
+  --fin-clr: #292929;
+  /*==================================================*/
+  --filter: rgba(0, 0, 0, 0.5);
+
+  --input-valid: #168aad;
+  /*=====================================================*/
+
+  font-family: "Space Grotesk", sans-serif;
+  --basic-font-color: #f9f7f3;
+  --input-font: var(--Light-grayish-violet);
+  --input-valid: #168aad;
+  --input-focus: rgba(235, 235, 235, 0.3);
+  /*=========================================================*/
+  --shadow-cards: rgba(19, 18, 18, 0.5);
+  --card-light: hsl(0, 19%, 94%);
+  /*=======================================================*/
+  /*==============================================================*/
+  --darker-clr: #9a9a9a;
+  --lighter-clr: #d1d1d1;
+
+  --darker-stripe-end: #000814;
+  --lighter-stripe-start: #343a40;
+
+  --bgk-light: #bbbbbb;
+  --bkg-dark: #474747;
+  /*=============================*/
+  --dark-grey: linear-gradient(
+    to right,
+    var(--lighter-stripe-start) 30%,
+    var(--darker-stripe-end)
+  );
+  --light-grey: linear-gradient(
+    to right,
+    var(--lighter-clr) 20%,
+    var(--darker-clr)
+  );
+  --card-small-stripes: var(--darker-clr);
+  --card-background-color: linear-gradient(
+    90deg,
+    var(--bgk-light) 20%,
+    var(--bkg-dark)
+  );
+  /*=============================================================*/
+  /*======================Card Front=================================*/
+  --darkest: #012a4a;
+  --darkest-end: #014f86;
+  --middle: #168aad;
+  --lightest: #d9ed92;
+
+  /*=======================Card BKG===========================*/
+  --clr-card-bkg: var(--card-background-color);
+  --clr-strip-light: var(--light-grey);
+  --clr-strip-dark: var(--dark-grey);
+  /*===================Cards Shadow==============================*/
+  --shadow-cards: rgba(53, 53, 53, 0.3);
+  --card-light: hsl(0, 0%, 75%);
+
+  --radius: 0.5rem;
+}
+.form_field_wrapper {
+  background: #292929;
+  border-radius: 1rem;
+}
+article:has(p) p {
+  color: var(--basic-font-color);
+}

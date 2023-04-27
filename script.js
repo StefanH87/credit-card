@@ -66,3 +66,15 @@ function previewCardField(inputValue, defaultValue, previewSelector) {
   const previewElement = document.getElementById(previewSelector);
   previewElement.innerText = currentValue;
 }
+
+//---------------------------------
+
+const buttons = document.querySelector(".theme-switch");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", setTheme);
+});
+
+function setTheme($event) {
+  document.body.dataset.theme = $event.target.dataset.theme;
+}

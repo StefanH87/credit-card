@@ -1,0 +1,82 @@
+:root {
+  --font: "IBM Plex Mono", monospace;
+  /*========Prime Colors==================*/
+
+  --active-input-border: #61a5c2;
+
+  /*(inputerrors)*/
+  --red-error: #c6161d;
+
+  /*Neutral*/
+  --White-main: #091821;
+  --Light-grayish-violet: #113e54;
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: #113e54;
+  --fin-clr: #292929;
+  /*==================================================*/
+  --filter: rgba(0, 0, 0, 0.6);
+
+  /*=====================================================*/
+
+  font-family: "Space Grotesk", sans-serif;
+  --basic-font-color: #ffaa00;
+  --input-font: var(--Light-grayish-violet);
+  --input-valid: #6fbfa8;
+  --input-focus: #0f3548;
+  /*=========================================================*/
+  --shadow-cards: rgba(19, 18, 18, 0.5);
+  --card-light: hsl(0, 19%, 94%);
+  /*=======================================================*/
+  /*==============================================================*/
+  --darker-clr: #5091b1;
+  --lighter-clr: #1d4e66;
+
+  --darker-stripe-end: #000814;
+  --lighter-stripe-start: #343a40;
+
+  --bgk-light: #dddf00;
+  --bkg-dark: #55a630;
+  /*=============================*/
+  --dark-grey: linear-gradient(
+    to right,
+    var(--lighter-stripe-start) 30%,
+    var(--darker-stripe-end)
+  );
+  --light-grey: linear-gradient(
+    to right,
+    var(--lighter-clr) 20%,
+    var(--darker-clr)
+  );
+  --card-small-stripes: var(--darker-clr);
+  --card-background-color: linear-gradient(
+    90deg,
+    var(--bgk-light) 20%,
+    var(--bkg-dark)
+  );
+  /*=============================================================*/
+  /*======================Card Front=================================*/
+  --darkest: #ffaa00;
+  --darkest-end: #ff9500;
+  --middle: #ff9500;
+  --lightest: #f5dd90;
+
+  /*=======================Card BKG===========================*/
+  --clr-card-bkg: var(--card-background-color);
+  --clr-strip-light: var(--light-grey);
+  --clr-strip-dark: var(--dark-grey);
+  /*===================Cards Shadow==============================*/
+  --shadow-cards: rgba(53, 53, 53, 0.3);
+  --card-light: hsl(0, 0%, 75%);
+
+  --radius: 0rem;
+}
+.form_field_wrapper {
+  border-radius: 0;
+}
+article:has(p) p {
+  color: #000814;
+}
+#confirm_button,
+#continue_button {
+  border-radius: var(--radius);
+}

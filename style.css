@@ -1,4 +1,7 @@
-@import url(cardBack.css);
+@import url(cardback.css);
+/* @import url(dark-theme.css); */
+@import url(cyber-theme.css);
+/* @import url(default-theme.css); */
 
 *,
 *::after,
@@ -8,208 +11,54 @@
   box-sizing: border-box;
 }
 :root {
-  /* primary*/
-  /*(active input border)*/
-  /* --active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); */
-  --active-input-border: hsl(278, 94%, 30%);
-
-  /*(inputerrors)*/
-  --red-error: hsl(0, 100%, 66%);
-  /*Neutral*/
-  --White-main: hsl(0, 0%, 100%);
-  --Light-grayish-violet: hsl(270, 3%, 87%);
-  --Dark-grayish-violet: hsl(279, 6%, 55%);
-  --Very-dark-violet: hsl(277, 84%, 20%);
+  width: 100vw;
+  height: 100vh;
   /*====================================================*/
   /*==================Fonts========================*/
   font-size: 18px;
-  font-family: "Space Grotesk", sans-serif;
-  --basic-font-color: rgba(0, 0, 0);
-  --input-font: rgba(0, 0, 0, 0.6);
+  font-family: var(--font);
 }
 
-/*
-.form_field_wrapper {
-  flex-grow: 3;
-  width: 70%;
-  background: var(--White-main);
-  box-shadow: inset 40px 0px 50px rgba(53, 53, 53, 0.2);
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/*======================================================*/
-/*===============================================*/
-
-/*============input=text=====================*/
-
-/*=================================================*/
-/*=================input main============================*/
-
-/*============================================================*/
-/* #card_holder:not(:placeholder-shown):invalid,
-#card_number:not(:placeholder-shown):invalid {
-  color: var(--red-error);
-}
-
-#card_holder:focus:invalid,
-#card_number:focus:invalid {
-  border-color: var(--red-error);
-}
-
-#card_holder:focus:invalid + .wrong,
-#card_number:focus:invalid + .wrong {
-  opacity: 1;
-}
-
-.wrong {
-  color: var(--red-error);
-  font-size: 0.6rem;
-  opacity: 0;
-}
-
-#year:focus:invalid,
-#month:focus:invalid,
-#card_cvc:focus:invalid {
-  border-color: var(--red-error);
-}
-#year:focus:invalid ~ .wrong,
-#month:focus:invalid ~ .wrong,
-#card_cvc:focus:invalid ~ .wrong {
-  opacity: 1;
-}
-
-input[type="text"]:valid {
-  border: 1px solid var(--active-input-border);
-  opacity: 0.6;
-} */
-
-/*===============================================*/
-/* .date_wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  width: 40%;
-}
-.wrapper_wrapper {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-bottom: 3rem;
-}
-.date_wrapper input[type="text"] {
-  width: 35%;
-}
-#year_month {
-  display: inline-flex;
-}
-#year {
-  margin: 0.5rem 0 0 0.5rem;
-}
-
-#card_cvc {
-  width: clamp(5%, 80vw, 94.1%);
-}
-.cvc_wrapper {
-  margin: 0 0 0 0;
-  width: 60%;
-  display: grid;
-  grid-template-columns: 1fr;
-} */
-
-/*===============================================*/
-/*============button======================*/
-
-/* #confirm_button:hover {
-  background: var(--active-input-border);
-}
-
-.attribution {
+/* .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-} */
-/*===============================================*/
-/*========================================================*/
-
-/*================================================*/
-
-/*================================================================*/
-/*=========================Fin Screen================================*/
-/* .fin_screen {
-  background: white;
-  width: 100%;
-  height: 80%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  translate: 0 -350px;
-  display: block;
-  transition: 0.5s ease-in-out;
-}
-.icon {
-  margin-top: 7rem;
-  margin-bottom: 2rem;
-}
-
-.fin_header,
-.fin_text {
-  letter-spacing: 0.15rem;
-  font-weight: 600;
-}
-.fin_header {
-  color: var(--basic-font-color);
-  text-transform: uppercase;
-  margin-bottom: 1.3rem;
-}
-
-.fin_text {
-  color: var(--Dark-grayish-violet);
-  font-size: 0.9rem;
-}
-
-#confirm_button:active > .fin_screen {
-  translate: 0 0px;
-}
-
-/*=========================*/
-/* #prev_cardcvc {
-  translate: 350px 109px;
 }  */
 
-/*=====================================================*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+body,
+main {
+  width: 100%;
+  height: 100%;
 }
-:root {
-  width: 100vw;
-  height: 100vh;
-}
+
 body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100%;
 }
 main {
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
-  height: 100%;
 }
 
 .gradient_bkg_wrapper {
   width: 100%;
-  height: 30vh;
-  background: green;
+  height: 35vh;
+  background: linear-gradient(
+    135deg,
+    var(--darkest) 10%,
+    var(--middle) 50%,
+    var(--lightest) 53%,
+    var(--middle) 70%,
+    var(--darkest) 95%
+  );
+}
+.filter_box {
+  width: 100%;
+  height: 100%;
+  background: var(--filter);
+  backdrop-filter: blur(30px);
   display: block;
 }
 
@@ -218,6 +67,8 @@ main {
   grid-template-columns: 1fr;
   width: 100%;
   height: 70vh;
+  place-content: center;
+  background: var(--White-main);
 }
 /*===============================================*/
 /*=================Cards==default=====================*/
@@ -232,8 +83,7 @@ main {
   position: relative;
   width: 90%;
   height: 220px;
-  border: 1px solid red;
-  margin-block: -10rem 2rem;
+  margin-block: -13.5rem 3rem;
 
   margin-inline: auto;
 }
@@ -244,58 +94,62 @@ main {
   max-width: 330px;
   height: 75%;
 
-  box-shadow: 15px 15px 40px rgba(53, 53, 53, 0.2);
+  box-shadow: 10px 10px 15px var(--shadow-cards);
 }
 .card_front {
   display: flex;
   flex-direction: column;
   justify-content: end;
+  color: red;
   position: absolute;
   top: 40%;
-  left: 0;
+  left: 0%;
   margin-inline: auto;
+  /* margin-top:-3.8rem; */
   padding: 1rem;
   background: linear-gradient(
     135deg,
-    rgba(99, 68, 250, 255) 20%,
-    rgba(226, 73, 127, 1) 50%,
-    #e3746d 50%,
-    rgba(235, 72, 120, 1) 70%,
-    rgba(109, 15, 148, 1) 90%
+    var(--darkest) 10%,
+    var(--middle) 50%,
+    var(--lightest) 53%,
+    var(--middle) 70%,
+    var(--darkest) 95%
   );
 
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid var(--Very-dark-violet);
-  border-bottom: 1px solid var(--Very-dark-violet);
+  border-top: 1px solid var(--card-light);
+  border-left: 1px solid var(--card-light);
 }
 
 .card_back {
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 10%;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: var(--clr-card-bkg);
 
-  border-top: 1px solid var(--clr-white);
-  border-left: 1px solid var(--clr-white);
+  border-top: 1px solid var(--card-light);
+  border-left: 1px solid var(--card-light);
 }
-
+#prev_cardcvc {
+  padding-right: 0.5rem;
+}
 /*======================================================*/
 /*============== Form Field=============================*/
 /*======================================================*/
 .form_field_wrapper {
-  display: block;
   width: 100%;
 }
 #confirm_form {
   width: 90%;
   margin-inline: auto;
 }
-
+#confirm_form p {
+  margin: 0.6rem 0 0.3rem 0;
+}
 form input[type="text"] {
   all: unset;
   border: 1px solid var(--Light-grayish-violet);
@@ -308,11 +162,9 @@ form input[type="text"] {
 }
 /*===========================================*/
 /*=======input text field===========*/
-label:has(p) > p {
-  margin: 1rem 0 0 0;
-}
+
 input[type="text"]::placeholder {
-  color: var(--Light-grayish-violet);
+  color: var(--input-font);
   font-weight: 500;
   text-transform: none;
   padding-left: 0.8rem;
@@ -322,7 +174,8 @@ input[type="text"]:focus {
   border: 1px solid var(--active-input-border);
   color: var(--active-input-border);
   font-weight: 500;
-  background: rgba(235, 235, 235, 0.3);
+  background: var(--input-focus);
+  padding-left: 0.5rem;
 }
 form:has(p) {
   color: var(--basic-font-color);
@@ -332,16 +185,12 @@ form:has(p) {
   font-weight: 600;
 }
 
-.wrong {
-  display: none;
-}
-
 .year_month_text {
   all: unset;
   display: grid;
   grid-template-columns: 1fr 1fr;
-
   width: 100%;
+  margin-bottom: 1rem;
 }
 .year_month_text > span {
   width: 100%;
@@ -350,14 +199,51 @@ form:has(p) {
 #year {
   width: 40%;
 }
+
 #year {
   margin-left: 0.5rem;
+}
+/*==========================================*/
+/*=============Card Valid/Invalid=======================*/
+/*==========================================*/
+#card_holder:not(:placeholder-shown):invalid,
+#card_number:not(:placeholder-shown):invalid {
+  color: var(--red-error);
+}
+#card_holder:focus:invalid,
+#card_number:focus:invalid {
+  border-color: var(--red-error);
+}
+#card_holder:focus:invalid + .wrong,
+#card_number:focus:invalid + .wrong {
+  opacity: 1;
+}
+.wrong {
+  color: var(--red-error);
+  font-size: 0.6rem;
+  opacity: 0;
+}
+#year:focus:invalid,
+#month:focus:invalid,
+#card_cvc:focus:invalid {
+  border-color: var(--red-error);
+}
+#year:focus:invalid ~ .wrong,
+#month:focus:invalid ~ .wrong,
+#card_cvc:focus:invalid ~ .wrong {
+  opacity: 1;
+}
+input[type="text"]:valid {
+  border-color: var(--input-valid);
+  color: var(--input-valid);
+  padding-left: 0.4rem;
 }
 /*==========================================*/
 /*=============Confirm Button=======================*/
 /*==========================================*/
 
-#confirm_button {
+#confirm_button,
+#continue_button {
   all: unset;
   width: 100%;
   padding-block: 0.6rem;
@@ -367,19 +253,89 @@ form:has(p) {
   text-transform: none;
   color: var(--White-main);
   background: var(--Very-dark-violet);
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
-#confirm_button:hover {
+#confirm_button:hover,
+#continue_button:hover {
   background: var(--active-input-border);
 }
 
-/* :is(article) p {
-  color: var(--White-main);
+/*=================================================*/
+/*==============Fin Screen=====================*/
+/*=================================================*/
+
+.fin_screen {
+  background: var(--fin-clr);
+  width: 100%;
+  height: 52%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  top: 47%;
+  left: 0;
+  translate: -100% 0;
+  transition: 0.5s;
+}
+.icon {
+  margin-inline: auto;
+  position: relative;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(to bottom, var(--darkest), var(--darkest-end));
+  border-radius: 100%;
+  margin-bottom: 2rem;
+}
+.icon::before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background: var(--White-main);
+  clip-path: polygon(0% 60%, 40% 100%, 100% 3%, 90% 0%, 37% 85%, 3% 50%);
+}
+.fin_header,
+.fin_text {
+  letter-spacing: 0.15rem;
+  font-weight: 600;
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+}
+.fin_header {
+  color: var(--basic-font-color);
   text-transform: uppercase;
-  font-weight: 200;
-} */
-@media only screen and (min-width: 1400px) {
+  margin-bottom: 1.3rem;
+}
+.fin_text {
+  letter-spacing: 0.1rem;
+  text-transform: none;
+  color: var(--Dark-grayish-violet);
+  font-size: 0.9rem;
+  padding-bottom: 2rem;
+}
+
+#continue_button {
+  position: absolute;
+  top: 85.5%;
+  left: 5%;
+  width: 90%;
+  margin-inline: auto;
+}
+
+#confirm_button:active ~ .fin_screen {
+  translate: 0 0;
+}
+#continue_button:active > .fin_screen {
+  scale: 0;
+}
+
+@media only screen and (min-width: 1300px) {
   main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -387,15 +343,116 @@ form:has(p) {
     height: 100%;
   }
   .gradient_bkg_wrapper {
-    width: 30vw;
+    width: 25vw;
     height: 100%;
 
     display: block;
   }
   .content_wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 70vw;
+    display: flex;
+    align-items: center;
+
+    width: 75vw;
     height: 100%;
+  }
+  .cards {
+    all: unset;
+    width: 100%;
+    height: 80%;
+
+    margin-block: auto;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -25rem;
+  }
+  .card_front,
+  .card_back {
+    all: unset;
+    position: absolute;
+    border-radius: 0.5rem;
+    width: 50%;
+    height: 30%;
+    box-shadow: 15px 15px 55px var(--shadow-cards);
+  }
+  .card_front {
+    top: 7%;
+    left: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-inline: auto;
+    padding: 1rem;
+    background: linear-gradient(
+      135deg,
+      var(--darkest) 10%,
+      var(--middle) 50%,
+      var(--lightest) 53%,
+      var(--middle) 70%,
+      var(--darkest) 95%
+    );
+
+    border-top: 1px solid var(--card-light);
+    border-left: 1px solid var(--card-light);
+  }
+  .circle {
+    margin-bottom: 4rem;
+  }
+  #prev_cardnumber {
+    font-size: 1.8rem;
+  }
+  .big_circle {
+    width: 40px;
+    height: 40px;
+  }
+  .small_circle {
+    width: 20px;
+    height: 20px;
+  }
+  .card_back {
+    height: 34%;
+    top: 47%;
+    left: 35%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--clr-card-bkg);
+
+    border-top: 1px solid var(--card-light);
+    border-left: 1px solid var(--card-light);
+  }
+  .form_field_wrapper {
+    margin-block: auto;
+    height: 40%;
+    width: 80%;
+    margin-right: 25%;
+  }
+  .fin_screen {
+    background: var(--White-main);
+    width: 31.5%;
+    height: 55%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 15.6%;
+    left: 47.8%;
+    translate: 0 0;
+    scale: 0;
+    transition: 0s;
+  }
+  .icon {
+    margin-inline: auto;
+  }
+  #confirm_form {
+    width: 80%;
+    margin-inline: auto;
+  }
+
+  #confirm_button:active ~ .fin_screen {
+    scale: 1;
   }
 }
